@@ -1,0 +1,204 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Image Style Transfer</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/ml5.min.js"></script>
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+  </head>
+  <body>
+    <div class="body-container">
+      <h1>Image Style Transfer</h1>
+      <a href="video.html" class="link go">Go to the Video Style Transfer</a>
+      <div class="style-box">
+        <div class="style-item">
+          <img
+            class="style-image style-chosen"
+            id="fuchun"
+            src="images/style/fuchun.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">fuchun</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="la_muse"
+            src="images/style/la_muse.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">la_muse</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="mathura"
+            src="images/style/mathura.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">mathura</div>
+        </div>
+        <!-- <div class="style-item">
+          <img
+            class="style-image"
+            id="matilde_perez"
+            src="images/style/matilde_perez.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">matilde_perez</div>
+        </div> -->
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="matta"
+            src="images/style/matta.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">matta</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="rain_princess"
+            src="images/style/rain_princess.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">rain_princess</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="scream"
+            src="images/style/scream.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">scream</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="udnie"
+            src="images/style/udnie.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">udnie</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="wave"
+            src="images/style/wave.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">wave</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="wreck"
+            src="images/style/wreck.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">wreck</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="zhangdaqian"
+            src="images/style/zhangdaqian.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">zhangdaqian</div>
+        </div>
+        <div class="style-item">
+          <input
+            id="uploadStyle"
+            name="inputImgFile"
+            type="file"
+            accept="image/*"
+          />
+          <img
+            class="style-image"
+            id="styleImage"
+            src="images/style/plus.png"
+            onclick="uploadStyleImg()"
+          />
+          <div class="style-text">Upload Style</div>
+        </div>
+      </div>
+      <div class="transfer-box">
+        <div class="input-box">
+          <h3 class="title">
+            INPUT
+          </h3>
+          <div id="input-image-box">
+            <div class="center-box">
+              <img id="input-img" src="images/input/monalisa.jpg" />
+            </div>
+            <div class="input-list">
+              <img
+                class="image"
+                id="monalisa"
+                src="images/input/monalisa.jpg"
+                onclick="updateInputImg(this)"
+              />
+              <img
+                class="image"
+                id="girlwithpearl"
+                src="images/input/girlwithpearl.jpg"
+                onclick="updateInputImg(this)"
+              />
+              <img
+                class="image"
+                id="starrynight"
+                src="images/input/starrynight.jpg"
+                onclick="updateInputImg(this)"
+              />
+              <img
+                class="image"
+                id="sunflower"
+                src="images/input/sunflower.jpg"
+                onclick="updateInputImg(this)"
+              />
+              <img
+                class="image"
+                id="sunday"
+                src="images/input/sunday.jpg"
+                onclick="updateInputImg(this)"
+              />
+              <img
+                class="image"
+                id="monet"
+                src="images/input/monet.jpg"
+                onclick="updateInputImg(this)"
+              />
+            </div>
+            <div class="button-box">
+              <input
+                id="uploader"
+                name="inputImgFile"
+                type="file"
+                accept="image/*"
+              />
+              <div class="link" onclick="uploadImg()">Upload an image</div>
+              <button class="start-btn" onclick="onPredictClick()">
+                Transfer My Image
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="output-box">
+          <h3 class="title">OUTPUT</h3>
+          <div id="output-img-container"></div>
+          <canvas id="stylized"></canvas>
+          <button class="start-btn" onclick="saveImg()">
+            Save My Image
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="image-sketch.js"></script>
+  </body>
+</html>

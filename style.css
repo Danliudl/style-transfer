@@ -1,0 +1,125 @@
+body {
+  min-width: 1400px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eee;
+  color: #767676;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+h1 {
+  margin: 30px;
+}
+.style-box {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px;
+}
+.style-item {
+  width: 100px;
+  font-size: 16px;
+}
+.style-chosen {
+  border: 4px solid rgb(43, 144, 226);
+}
+.style-image {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+.transfer-box {
+  display: flex;
+  margin: 20px;
+  justify-content: space-between;
+}
+.input-box,
+.output-box {
+  width: 45%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+.transfer-box .center-box {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+#input-img {
+  width: 300px;
+  height: 300px;
+}
+.input-list {
+  display: flex;
+  justify-content: space-between;
+}
+.input-list .image {
+  width: 15%;
+  height: 15%;
+  margin: 20px 0;
+  cursor: pointer;
+}
+.input-list .input-button {
+  width: 50%;
+  margin: 20px 0;
+}
+input[type="file"] {
+  display: none;
+}
+.link {
+  color: rgb(43, 144, 226);
+  font-size: 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+.start-btn {
+  color: rgb(43, 144, 226);
+  border: solid 2px rgb(43, 144, 226);
+  width: 50%;
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 10px 0;
+  cursor: pointer;
+  background: white;
+}
+.start-btn:hover {
+  background: rgb(43, 144, 226);
+  color: white;
+}
+.tab-box {
+  display: inline-block;
+  border: solid 2px rgb(43, 144, 226);
+  font-size: 16px;
+}
+.tab-item {
+  display: inline-block;
+  padding: 0 10px;
+  color: rgb(43, 144, 226);
+  cursor: pointer;
+}
+.tab-chosen {
+  background-color: rgb(43, 144, 226);
+  color: #fff;
+}
+#input-video-box {
+  display: none;
+}
+
+#input-source {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+#stylized {
+  display: none;
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+}
+.go {
+  margin: 20px;
+}

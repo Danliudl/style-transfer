@@ -1,0 +1,167 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Video Style Transfer</title>
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/ml5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+  </head>
+  <body>
+    <div class="body-container">
+      <h1>Video Style Transfer</h1>
+      <a href="image.html" class="link go">Go to the Image Style Transfer</a>
+      <div class="style-box">
+        <div class="style-item">
+          <img
+            class="style-image style-chosen"
+            id="fuchun"
+            src="images/style/fuchun.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">fuchun</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="la_muse"
+            src="images/style/la_muse.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">la_muse</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="mathura"
+            src="images/style/mathura.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">mathura</div>
+        </div>
+        <!-- <div class="style-item">
+          <img
+            class="style-image"
+            id="matilde_perez"
+            src="images/style/matilde_perez.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">matilde_perez</div>
+        </div> -->
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="matta"
+            src="images/style/matta.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">matta</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="rain_princess"
+            src="images/style/rain_princess.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">rain_princess</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="scream"
+            src="images/style/scream.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">scream</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="udnie"
+            src="images/style/udnie.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">udnie</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="wave"
+            src="images/style/wave.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">wave</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="wreck"
+            src="images/style/wreck.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">wreck</div>
+        </div>
+        <div class="style-item">
+          <img
+            class="style-image"
+            id="zhangdaqian"
+            src="images/style/zhangdaqian.jpg"
+            onclick="updateStyleImg(this)"
+          />
+          <div class="style-text">zhangdaqian</div>
+        </div>
+        <div class="style-item">
+          <input
+            id="uploadStyle"
+            name="inputImgFile"
+            type="file"
+            accept="image/*"
+          />
+          <img
+            class="style-image"
+            id="styleImage"
+            src="images/style/plus.png"
+            onclick="uploadStyleImg()"
+          />
+          <div class="style-text">Upload Style</div>
+        </div>
+      </div>
+      <div class="transfer-box">
+        <div class="input-box">
+          <h3 class="title">
+            INPUT
+          </h3>
+          <div id="input-source"></div>
+          <input
+            id="videoUploader"
+            name="inputVideoFile"
+            type="file"
+            accept="video/*"
+          />
+          <div class="input-list">
+            <div class="input-button">
+              <div class="link" onclick="useWebcam()">Use my webcam</div>
+            </div>
+            <div class="input-button">
+              <div class="link" onclick="uploadVideo()">Upload an video</div>
+            </div>
+          </div>
+          <button class="start-btn" onclick="onPredictVideoClick()">
+            Transfer My Video
+          </button>
+        </div>
+        <div class="output-box">
+          <h3 class="title">OUTPUT</h3>
+          <div id="output-img-container"></div>
+          <canvas id="stylized"></canvas>
+          <button class="start-btn" onclick="saveShot()">
+            Take a Picture
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="video-sketch.js"></script>
+  </body>
+</html>
